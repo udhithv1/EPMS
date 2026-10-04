@@ -1,0 +1,1 @@
+package com.payroll.repository; import com.payroll.model.Payroll; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface PayrollRepository extends JpaRepository<Payroll,Long>{ Optional<Payroll> findByEmployeeIdAndMonthAndYear(Long id,int month,int year); List<Payroll> findByYearAndMonth(int year,int month); }

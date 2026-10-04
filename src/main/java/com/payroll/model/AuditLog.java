@@ -1,0 +1,4 @@
+package com.payroll.model;
+import jakarta.persistence.*; import java.time.LocalDateTime;
+@Entity @Table(name="audit_logs") public class AuditLog { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; private String username,action,entityName,entityId,description; private LocalDateTime timestamp;
+ public AuditLog(){} public AuditLog(String u,String a,String e,String i,String d){username=u;action=a;entityName=e;entityId=i;description=d;timestamp=LocalDateTime.now();} public Long getId(){return id;} public String getUsername(){return username;} public String getAction(){return action;} public String getEntityName(){return entityName;} public String getEntityId(){return entityId;} public String getDescription(){return description;} public LocalDateTime getTimestamp(){return timestamp;} }
